@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: Daarek
@@ -11,6 +13,23 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <h2>Użytkownik:
+  <c:if test="${sessionScope.get('user') == null}">
+    niezalogowany
+  </c:if>
+    <c:if test="${sessionScope.get('user') !=null}">
+      ${sessionScope.get("user").login}
+    </c:if>
+
+  </h2>
+  <ul>
+    <li><p><a href="messages?action=all"> Wszystkie wiadomości</a></p></li>
+    <li><p><a href="login"> Logowanie</a></p></li>
+<c:if test="${sessionScope.get('user') !=null}">
+    <li><p><a href="logout">Wyloguj</a> </p></li>
+</c:if>
+      <li><p><a href="messages?action=add">Dodaj wiadomość</a></p></li>
+
+  </ul>
   </body>
 </html>
