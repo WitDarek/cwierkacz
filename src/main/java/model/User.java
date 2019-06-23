@@ -1,12 +1,11 @@
 package model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class User implements Serializable {
@@ -17,6 +16,7 @@ public class User implements Serializable {
     private String password;
     private String email;
     private LocalDateTime registered;
+
 
     public User(String login, String password, String email) {
         this.login = login;
@@ -59,4 +59,5 @@ public class User implements Serializable {
     public void setRegistered(LocalDateTime registered) {
         this.registered = registered;
     }
+
 }

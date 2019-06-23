@@ -67,9 +67,11 @@ public class UserRestService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response userMessages(@PathParam("id") long id) {
         User user = UserRepository.INSTANCE.getDAO().get(id);
+        System.out.println(user.getLogin().toString());
+        System.out.println(user);
         if (user != null) {
             List<Message> messages = MessageRepository.INSTANCE.getDAO().findByAuthor(user);
-            return Response.ok(messages).build();
+            return Response.ok(user).build();
         }
         return Response.status(404).build();
     }
