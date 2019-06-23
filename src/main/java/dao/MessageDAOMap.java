@@ -44,4 +44,9 @@ public class MessageDAOMap implements MessageDAO {
     public List<Message> getAll() {
         return new ArrayList<>(messages.values());
     }
+
+    @Override
+    public Message get(long id) {
+        return null;
+    }
 }

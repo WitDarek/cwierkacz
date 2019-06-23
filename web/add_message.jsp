@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Dodaj wiadomość</h1>
-    <form method="post" action="messages">
+    <form method="post" action="api/message/add/form">
         <input type="text" name="title">
         <textarea name="content"></textarea>
         <button type="submit">Dodaj wiadomość</button>

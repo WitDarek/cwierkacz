@@ -45,4 +45,9 @@ public class UserDAOMap implements UserDAO {
     public List<User> getAll() {
         return new ArrayList<>(users.values());
     }
+
+    @Override
+    public User get(long id) {
+        return null;
+    }
 }

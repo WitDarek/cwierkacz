@@ -1,14 +1,23 @@
 package model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Entity
 public class Message implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
     private String title;
     private String content;
     private LocalDateTime published;
+
+    @ManyToOne
+    @JoinColumn(name = "author_id")
     private User author;
 
     public Message(String title, String content, User author) {
@@ -68,4 +77,6 @@ public class Message implements Serializable {
     public int hashCode() {
         return Objects.hash(getTitle(), getContent(), getPublished(), getAuthor());
     }
+
+
 }

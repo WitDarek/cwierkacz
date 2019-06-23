@@ -24,11 +24,19 @@
   </h2>
   <ul>
     <li><p><a href="messages?action=all"> Wszystkie wiadomości</a></p></li>
+    <li><p><a href="add_user.jsp">Dodaj użytkownika</a> </p></li>
     <li><p><a href="login"> Logowanie</a></p></li>
 <c:if test="${sessionScope.get('user') !=null}">
     <li><p><a href="logout">Wyloguj</a> </p></li>
 </c:if>
       <li><p><a href="messages?action=add">Dodaj wiadomość</a></p></li>
+    <li><a href="add_message.jsp">Dodaj wiadomosc bez logowania</a> </li>
+    <li>
+      <p><a href="api/message/all">API - wszystkie wiadomosci</a></p>
+    </li>
+    <li>
+      <p><a href="api/user/all">API - wszyscy użytkownicy</a></p>
+    </li>
 
   </ul>
   </body>
